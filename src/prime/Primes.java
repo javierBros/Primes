@@ -1,15 +1,9 @@
 package prime;
 
 public class Primes {
-	
-	private int amount;
-	
-	public Primes(int amount) {
-		this.amount = amount;
-	}
 
-	public int[] generatePrimeNumbers(){        
-        int sizeCheckedPrimes = amount*10;
+	public static int[] generatePrimeNumbers(int amount){        
+        int sizeCheckedPrimes = amount*8;
 		int sqrt = (int) Math.floor(Math.sqrt(sizeCheckedPrimes));
 
         boolean[] checkedPrimes = new boolean[sizeCheckedPrimes + 1];
@@ -22,10 +16,10 @@ public class Primes {
             }
         }
         
-        return createArrayNumbers(checkedPrimes);
+        return createArrayNumbers(checkedPrimes, amount);
     }
 	
-	public int[] createArrayNumbers(boolean[] markedValues) {
+	private static int[] createArrayNumbers(boolean[] markedValues, int amount) {
 		int[] numbers = new int[amount + 1];
 		int index = 1;
 		for (int i = 2; i < markedValues.length; i++) {
@@ -36,14 +30,6 @@ public class Primes {
 			}
 		}
 		return numbers;
-	}
-
-	public int getAmount() {
-		return amount;
-	}
-
-	public void setAmount(int amount) {
-		this.amount = amount;
 	}
 	
 	
