@@ -3,7 +3,7 @@ package prime;
 public class Primes {
 
 	public static int[] generatePrimeNumbers(int amount){        
-        int sizeCheckedPrimes = amount*8;
+        int sizeCheckedPrimes = amount*100;
 		int sqrt = (int) Math.floor(Math.sqrt(sizeCheckedPrimes));
 
         boolean[] checkedPrimes = new boolean[sizeCheckedPrimes + 1];
